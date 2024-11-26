@@ -1,0 +1,503 @@
+{
+	"info": {
+		"_postman_id": "f169e0a0-c494-4edb-8ce6-4d74869e89dc",
+		"name": "Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18827712",
+		"_collection_link": "https://aivo-3428.postman.co/workspace/Datapet~7a5479f4-0d55-445e-895b-9c262415663d/collection/18827712-f169e0a0-c494-4edb-8ce6-4d74869e89dc?action=share&source=collection_link&creator=18827712"
+	},
+	"item": [
+		{
+			"name": "Fitness Activities",
+			"item": [
+				{
+					"name": "User Fitness Activities",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|LiCsAncBEWQmdsYDevf8S25I7qanjpZqWfAvslMIe0dd43f2",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/fitness-activities",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"fitness-activities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Activity (Running)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|SJkta2lyX0EdrcsAXG32MFpTIahtZdmyADDDz2J8e59f3c56",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "activity_type",
+									"value": "running",
+									"type": "text"
+								},
+								{
+									"key": "activity_date",
+									"value": "2024-11-26 12:00:00",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Running in Marathon",
+									"type": "text"
+								},
+								{
+									"key": "distance",
+									"value": "21",
+									"type": "text"
+								},
+								{
+									"key": "distance_unit",
+									"value": "km",
+									"type": "text"
+								},
+								{
+									"key": "elapsed_time",
+									"value": "3600",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/fitness-activities",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"fitness-activities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Ativity (Force)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 4|SJkta2lyX0EdrcsAXG32MFpTIahtZdmyADDDz2J8e59f3c56"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "activity_date",
+									"value": "2024-11-26 12:00:00",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Clean and Jerk",
+									"type": "text"
+								},
+								{
+									"key": "weight_lifted",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "activity_type",
+									"value": "force",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/fitness-activities",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"fitness-activities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Activity (Cycling)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|SJkta2lyX0EdrcsAXG32MFpTIahtZdmyADDDz2J8e59f3c56",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "activity_date",
+									"value": "2024-11-26 12:00:00",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Pedaleando un poco",
+									"type": "text"
+								},
+								{
+									"key": "distance",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "distance_unit",
+									"value": "km",
+									"type": "text"
+								},
+								{
+									"key": "elapsed_time",
+									"value": "3200",
+									"type": "text"
+								},
+								{
+									"key": "activity_type",
+									"value": "cycling",
+									"type": "text"
+								},
+								{
+									"key": "cadence",
+									"value": "10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/fitness-activities",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"fitness-activities"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "pedro",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "admin@admin.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "text"
+						},
+						{
+							"key": "c_password",
+							"value": "12345",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "admin@admin.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "text"
+						},
+						{
+							"key": "remember_me",
+							"value": "fals",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|LiCsAncBEWQmdsYDevf8S25I7qanjpZqWfAvslMIe0dd43f2",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/auth/logout",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|LiCsAncBEWQmdsYDevf8S25I7qanjpZqWfAvslMIe0dd43f2",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Values",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|SJkta2lyX0EdrcsAXG32MFpTIahtZdmyADDDz2J8e59f3c56",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/fitness/search?filters[0][field]=user_id&filters[0][value]=2&search_terms[0][field]=type&search_terms[0][value]=force&search_terms[0][match]=%like%&order=desc",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"fitness",
+						"search"
+					],
+					"query": [
+						{
+							"key": "first",
+							"value": "10",
+							"disabled": true
+						},
+						{
+							"key": "filters[0][field]",
+							"value": "user_id"
+						},
+						{
+							"key": "filters[0][value]",
+							"value": "2"
+						},
+						{
+							"key": "search_terms[0][field]",
+							"value": "type"
+						},
+						{
+							"key": "search_terms[0][value]",
+							"value": "force"
+						},
+						{
+							"key": "search_terms[0][match]",
+							"value": "%like%"
+						},
+						{
+							"key": "order",
+							"value": "desc"
+						},
+						{
+							"key": "before",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Analytics",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|SJkta2lyX0EdrcsAXG32MFpTIahtZdmyADDDz2J8e59f3c56",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/fitness/analytics/running/distance/AVG",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"fitness",
+						"analytics",
+						"running",
+						"distance",
+						"AVG"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
