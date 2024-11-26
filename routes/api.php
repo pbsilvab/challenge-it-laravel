@@ -12,6 +12,7 @@ Route::get('/user', function (Request $request) {
 Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('fitness-activities', FitnessActivityController::class);
     Route::get('fitness/search', [FitnessActivityController::class, 'search'])->name('search');
+    Route::get('fitness/analytics/{activity_type}/{property}/{aggregation}', [FitnessActivityController::class, 'analytics']);
 });
 
 Route::group(['prefix' => 'auth'], function () {

@@ -44,6 +44,12 @@ class FitnessActivityController extends Controller
         return response()->json($response, 201);
     }
 
+    public function analytics(Request $request, $activity_type, $property, $aggregation)
+    {
+        $response = $this->fitnessActivityService->analytics($this->searchService, $activity_type, $property, $aggregation);
+        return response()->json($response, 201);
+    }
+
     /**
      * Display the specified resource.
      */

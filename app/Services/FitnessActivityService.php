@@ -99,9 +99,24 @@ class FitnessActivityService
         $hasNextPage = $params['first'] ?? false;
         $hasPreviousPage = $params['last'] ?? false;
 
-        // Build the dynamic response
-        $response = $searchService->buildDynamicResponse($results, $totalCount, $startCursor, $endCursor, $hasNextPage, $hasPreviousPage);
+        $nodes = $searchService->buildDynamicResponse($results, $totalCount, $startCursor, $endCursor, $hasNextPage, $hasPreviousPage);
 
-        return response()->json($response);
+        return $nodes;
+    }
+
+    public function analytics(SearchService $searchService, $activity_type, $property, $aggregation)
+    {
+        $query = FitnessActivity::query();
+
+        $result =  $query->selectRaw("$aggregation(JSON_EXTRACT(properties, '$.$property')) as result")
+            ->where('user_id', \Auth::user()->id)
+            ->where('activity_type', $activity_type)
+            ->value('result');
+            
+        return [
+            'property' => $property,
+            'aggregation' => $aggregation,
+            'result' => $result,
+        ];
     }
 }
