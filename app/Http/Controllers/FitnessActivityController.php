@@ -5,14 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\FitnessActivity;
 use App\Services\FitnessActivityService;
+use App\Services\SearchService;
 
 class FitnessActivityController extends Controller
 {
     protected $fitnessActivityService;
+    protected $searchService;
 
-    public function __construct(FitnessActivityService $fitnessActivityService)
+    public function __construct(FitnessActivityService $fitnessActivityService, SearchService $searchService)
     {
         $this->fitnessActivityService = $fitnessActivityService;
+        $this->searchService = $searchService;
     }
 
     public function index()
@@ -33,6 +36,12 @@ class FitnessActivityController extends Controller
     {
         $activity = $this->fitnessActivityService->createActivity($request);
         return response()->json($activity, 201);
+    }
+
+    public function search(Request $request) 
+    {
+        $response = $this->fitnessActivityService->search($request, $this->searchService);
+        return response()->json($response, 201);
     }
 
     /**
