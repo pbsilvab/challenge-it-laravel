@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class FitnessActivity extends Model
 {
     protected $fillable = [
+        'user_id',
         'type', 
         'activity_type', 
         'activity_date', 

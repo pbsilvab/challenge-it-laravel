@@ -13,8 +13,28 @@ class Cycling extends FitnessActivity
             'cadence' => 'required|int',
             'distance' => 'required|string',
             'distance_unit' => 'required|string',
-            'elapsed_time' => 'required|date',
+            'elapsed_time' => 'required|int',
         ];
+    }
+
+    public function completeValues(Cycling $instancia, array $values) 
+    {
+        $instancia->user_id = \Auth::user()->id;
+        $instancia->name = $values['name'];
+        $instancia->activity_type = $values['activity_type'];
+        $instancia->activity_date = $values['activity_date'];
+        $instancia->type = $this->activityType();
+        $instancia->setCadence($values['cadence']);
+        $instancia->setDistance($values['distance']);
+        $instancia->setDistanceUnit($values['distance_unit']);
+        $instancia->setElapsedTime($values['elapsed_time']);
+        
+        return  $instancia;
+    }
+
+    public function activityType()
+    {
+        return Cycling::class;
     }
 
     public function setCadence(int $cadence)
